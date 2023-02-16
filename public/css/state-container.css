@@ -1,0 +1,105 @@
+.request-container .request-code,
+.response-container .response-code {
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+}
+
+.request-container--visible .request-code,
+.response-container--visible .response-code {
+    opacity: 1;
+}
+
+.request-container p,
+.response-container p {
+    padding: 16px 24px;
+    font-size: 0.9em;
+    opacity: 0.7;
+}
+
+.request-container--visible p,
+.response-container--visible p {
+    display: none;
+}
+
+
+#stateContainerMenuSidebar .state-container-header {
+    height: 60px;
+    padding: 16px 24px;
+    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    line-height: 1;
+}
+
+#stateContainerMenuSidebar h2 {
+    display: inline-block;
+    font-size: 1.25em;
+    margin: 5px 0 0;
+}
+
+.sidebar .copy-sample-code {
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    float: right;
+    font-size: 0.65em;
+    margin-top: -3px;
+    text-transform: uppercase;
+    padding: 8px 0;
+    transition: 0.5s all;
+    width: 60px;
+}
+
+.sidebar .copy-sample-code:hover {
+    background: #183057;
+}
+
+.sidebar .copy-sample-code.copy-sample-code--active {
+    border-color: #06f;
+    background: #06f;
+    transition: none;
+}
+
+.sidebar .copy-sample-code.copy-sample-code--active:before {
+    content: 'Copied!';
+}
+
+.sidebar .copy-sample-code:before {
+    content: 'Copy';
+}
+
+.sidebar {
+    background: #00112c;
+    color: #fff;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.info {
+    background: #f3f6f9;
+    border-left: 7px solid #06f;
+    margin: 28px 0 0;
+    padding: 7px 14px;
+}
+
+@media (min-width: 780px) {
+    .sidebar {
+        width: 40%;
+    }
+}
+
+@media (min-width: 780px) {
+    .info {
+        padding: 7px 21px;
+    }
+}
+
+
+pre {
+    font-size: 0.95em;
+    margin: 24px;
+    overflow: auto;
+    position: relative;
+}
