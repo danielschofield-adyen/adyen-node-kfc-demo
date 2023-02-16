@@ -1,3 +1,5 @@
+
+
 const clientKey = document.getElementById("clientKey").innerHTML;
 const type = document.getElementById("type").innerHTML;
 
