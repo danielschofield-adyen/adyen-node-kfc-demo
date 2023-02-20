@@ -108,7 +108,7 @@ app.post("/api/initiatePayment", async (req, res) => {
       reference: orderRef, // required: your Payment Reference
       channel: "Web", // required
       // we pass the orderRef in return URL to get paymentData during redirects
-      returnUrl: `http://localhost:8080/api/handleShopperRedirect?orderRef=${orderRef}`, // required for redirect flow
+      returnUrl: `/api/handleShopperRedirect?orderRef=${orderRef}`, // required for redirect flow
       browserInfo: req.body.browserInfo,
       paymentMethod: req.body.paymentMethod, // required
       shopperInteraction:"Ecommerce",
