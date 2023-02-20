@@ -28,8 +28,22 @@ async function startCheckout() {
                 amount: {
                     value: 1595,
                     currency: "AUD"
-                }
+                },
+            /*    hasHolderName: true,
+                holderNameRequired: true,
+                enableStoreDetails: true,
+                name: 'Credit or debit card',
+                billingAddressRequired: true*/
             },
+           /* threeDS2: { // Web Components 4.0.0 and above: sample configuration for the threeDS2 action type
+              challengeWindowSize: '02'
+               // Set to any of the following:
+               // '02': ['390px', '400px'] -  The default window size
+               // '01': ['250px', '400px']
+               // '03': ['500px', '600px']
+               // '04': ['600px', '400px']
+               // '05': ['100%', '100%']
+            },*/
             paypal: {
                 amount: {
                     currency: "AUD",

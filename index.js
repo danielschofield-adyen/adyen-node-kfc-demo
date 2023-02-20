@@ -99,6 +99,11 @@ app.post("/api/initiatePayment", async (req, res) => {
   try {
     // unique ref for the transaction
     const orderRef = uuid();
+    // Allows for gitpod support
+    const localhost = req.get('host');
+    // const isHttps = req.connection.encrypted;
+    const protocol = req.socket.encrypted? 'https' : 'http';
+
     // Ideally the data passed here should be computed based on business logic
     const response = await checkout.payments({
 
@@ -108,7 +113,7 @@ app.post("/api/initiatePayment", async (req, res) => {
       reference: orderRef, // required: your Payment Reference
       channel: "Web", // required
       // we pass the orderRef in return URL to get paymentData during redirects
-      returnUrl: `/api/handleShopperRedirect?orderRef=${orderRef}`, // required for redirect flow
+      returnUrl: `${protocol}://${localhost}/api/handleShopperRedirect?orderRef=${orderRef}`, // required for redirect flow
       browserInfo: req.body.browserInfo,
       paymentMethod: req.body.paymentMethod, // required
       shopperInteraction:"Ecommerce",
